@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -15,6 +16,8 @@ namespace DotNetQuiz.Web
     {
         protected void Application_Start()
         {
+            Database.SetInitializer<QuizDataContext>(new DropCreateDatabaseAlways<QuizDataContext>());
+
             AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);

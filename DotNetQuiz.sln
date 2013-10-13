@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetQuiz.Web", "DotNetQui
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetQuiz.Tests", "DotNetQuiz.Tests\DotNetQuiz.Tests.csproj", "{414174EF-229A-469F-9BBF-A83F36511127}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetQuiz.Data", "DotNetQuiz.Data\DotNetQuiz.Data.csproj", "{C3C8BA96-453E-4FB0-A912-8B90ADE8536A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{414174EF-229A-469F-9BBF-A83F36511127}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{414174EF-229A-469F-9BBF-A83F36511127}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{414174EF-229A-469F-9BBF-A83F36511127}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3C8BA96-453E-4FB0-A912-8B90ADE8536A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3C8BA96-453E-4FB0-A912-8B90ADE8536A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3C8BA96-453E-4FB0-A912-8B90ADE8536A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3C8BA96-453E-4FB0-A912-8B90ADE8536A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
