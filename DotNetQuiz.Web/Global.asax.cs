@@ -16,7 +16,7 @@ namespace DotNetQuiz.Web
     {
         protected void Application_Start()
         {
-            Database.SetInitializer<QuizDataContext>(new DropCreateDatabaseAlways<QuizDataContext>());
+            Database.SetInitializer<QuizDataContext>(new QuizDatabaseInitializer());
 
             AreaRegistration.RegisterAllAreas();
 
