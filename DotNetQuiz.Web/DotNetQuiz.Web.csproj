@@ -128,6 +128,7 @@
     </Compile>
     <Compile Include="Models\Answers.cs" />
     <Compile Include="Models\Questions.cs" />
+    <Compile Include="Models\QuizViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\QuizDataContext.cs" />
   </ItemGroup>

@@ -30,9 +30,15 @@ namespace DotNetQuiz.Web.Controllers
 
             // TODO: Perhaps a view model for this
             var question = context.Questions.FirstOrDefault();
-            // var answers = context.Answers.ToList();
-            
-            return View(question);
+            var answers = context.Answers.ToList();
+
+            var viewModel = new QuizViewModel
+            {
+                Questions = question,
+                Answers = answers
+            };
+
+            return View(viewModel);
         }
 
         public ActionResult About()

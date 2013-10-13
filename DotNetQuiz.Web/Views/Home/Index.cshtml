@@ -1,9 +1,18 @@
-﻿@model DotNetQuiz.Web.Models.Questions
+﻿@model DotNetQuiz.Web.Models.QuizViewModel
 
 @{
     ViewBag.Title = "Home Page";  
 }
 
-<div>
-    @Model.QuestionText
+<div id="question">
+    @Model.Questions.QuestionText
+</div>
+
+<div id="answers">
+    <ul>
+        @foreach (var answer in Model.Answers)
+        {
+            <li>@answer.AnswerText</li>
+        }
+    </ul>
 </div>
