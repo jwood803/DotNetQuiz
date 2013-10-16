@@ -12,6 +12,7 @@ namespace DotNetQuiz.Web.Controllers
     {
         public ActionResult Index()
         {
+            // TODO: Move below to a repository
             var sqlLiteFile = "~/App_Data/sqLiteDb".MapHostAbsolutePath();
             Questions question;
             var dbFactory = new OrmLiteConnectionFactory(sqlLiteFile, false, SqliteDialect.Provider);
@@ -27,10 +28,10 @@ namespace DotNetQuiz.Web.Controllers
                     CorrectAnswerId = 3,
                     Answers = new List<Answers>
                         {
-                            new Answers { AnswerText = "Clear Light Reflection" },
-                            new Answers { AnswerText = "Calcium Lime Random" },
-                           new Answers { AnswerText = "Common Language Runtime" },
-                           new Answers { AnswerText = "Clears Lime Ridiculously" }                    
+                           new Answers { AnswerText = "Clear Light Reflection", QuestionsId = 1 },
+                           new Answers { AnswerText = "Calcium Lime Random", QuestionsId = 1 },
+                           new Answers { AnswerText = "Common Language Runtime", QuestionsId = 1 },
+                           new Answers { AnswerText = "Clears Lime Ridiculously", QuestionsId = 1 }
                         }
                 });
 
