@@ -147,6 +147,7 @@
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Models\Answers.cs" />
+    <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\Questions.cs" />
     <Compile Include="Models\QuizViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -180,10 +181,10 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Account\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

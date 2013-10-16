@@ -1,1 +1,9 @@
-﻿
+﻿@model DotNetQuiz.Web.Models.LoginViewModel
+
+@using(Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    @Html.EditorForModel()
+    
+    <input type="submit" value="Log in" />
+}
