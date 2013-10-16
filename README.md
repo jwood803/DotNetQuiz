@@ -1,4 +1,4 @@
 DotNetQuiz
 ==========
 
-Small application to test your .NET and C# knowledge
+Small quiz application to test your .NET and C# knowledge.
