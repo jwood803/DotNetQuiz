@@ -1,6 +1,10 @@
 ﻿using DotNetQuiz.Web.Models;
 using System.Linq;
 using System.Web.Mvc;
+using ServiceStack.OrmLite;
+using ServiceStack.OrmLite.Sqlite;
+using ServiceStack.Common.Utils;
+using System.Collections.Generic;
 
 namespace DotNetQuiz.Web.Controllers
 {
@@ -8,18 +12,32 @@ namespace DotNetQuiz.Web.Controllers
     {
         public ActionResult Index()
         {
-            var context = new QuizDataContext();
-
-            var question = context.Questions.FirstOrDefault();
-            var answers = context.Answers.ToList();
-
-            var viewModel = new QuizViewModel
+            var sqlLiteFile = "~/App_Data/sqLiteDb".MapHostAbsolutePath();
+            Questions question;
+            var dbFactory = new OrmLiteConnectionFactory(sqlLiteFile, false, SqliteDialect.Provider);
+            
+            using (var db = dbFactory.Open())
             {
-                Questions = question,
-                Answers = answers
-            };
+                db.CreateTableIfNotExists<Questions>();
+                db.CreateTableIfNotExists<Answers>();
 
-            return View(viewModel);
+                db.Insert<Questions>(new Questions
+                {
+                    QuestionText = "What does CLR stand for?",
+                    CorrectAnswerId = 3,
+                    Answers = new List<Answers>
+                        {
+                            new Answers { AnswerText = "Clear Light Reflection" },
+                            new Answers { AnswerText = "Calcium Lime Random" },
+                           new Answers { AnswerText = "Common Language Runtime" },
+                           new Answers { AnswerText = "Clears Lime Ridiculously" }                    
+                        }
+                });
+
+                question = db.Where<Questions>(x => x.QuestionId == 1)[0];
+            }
+
+            return View(question);
         }
     }
 }

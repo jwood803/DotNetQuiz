@@ -1,10 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ServiceStack.DataAnnotations;
 namespace DotNetQuiz.Web.Models
 {
     public class Answers
     {
-        [Key]
+        [AutoIncrement]
         public int AnswersId { get; set; }
+
+        [References(typeof(Questions))]
         public int QuestionsId { get; set; }
         public string AnswerText { get; set; }
     }
