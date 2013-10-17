@@ -13,32 +13,32 @@ namespace DotNetQuiz.Web.Controllers
         public ActionResult Index()
         {
             // TODO: Move below to a repository
-            var sqlLiteFile = "~/App_Data/sqLiteDb".MapHostAbsolutePath();
-            Questions question;
-            var dbFactory = new OrmLiteConnectionFactory(sqlLiteFile, false, SqliteDialect.Provider);
+            //var sqlLiteFile = "~/App_Data/sqLiteDb".MapHostAbsolutePath();
+            //Questions question;
+            //var dbFactory = new OrmLiteConnectionFactory(sqlLiteFile, false, SqliteDialect.Provider);
             
-            using (var db = dbFactory.Open())
-            {
-                db.CreateTableIfNotExists<Questions>();
-                db.CreateTableIfNotExists<Answers>();
+            //using (var db = dbFactory.Open())
+            //{
+            //    db.CreateTableIfNotExists<Questions>();
+            //    db.CreateTableIfNotExists<Answers>();
 
-                db.Insert<Questions>(new Questions
-                {
-                    QuestionText = "What does CLR stand for?",
-                    CorrectAnswerId = 3,
-                    Answers = new List<Answers>
-                        {
-                           new Answers { AnswerText = "Clear Light Reflection", QuestionsId = 1 },
-                           new Answers { AnswerText = "Calcium Lime Random", QuestionsId = 1 },
-                           new Answers { AnswerText = "Common Language Runtime", QuestionsId = 1 },
-                           new Answers { AnswerText = "Clears Lime Ridiculously", QuestionsId = 1 }
-                        }
-                });
+            //    db.Insert<Questions>(new Questions
+            //    {
+            //        QuestionText = "What does CLR stand for?",
+            //        CorrectAnswerId = 3,
+            //        Answers = new List<Answers>
+            //            {
+            //               new Answers { AnswerText = "Clear Light Reflection", QuestionsId = 1 },
+            //               new Answers { AnswerText = "Calcium Lime Random", QuestionsId = 1 },
+            //               new Answers { AnswerText = "Common Language Runtime", QuestionsId = 1 },
+            //               new Answers { AnswerText = "Clears Lime Ridiculously", QuestionsId = 1 }
+            //            }
+            //    });
 
-                question = db.Where<Questions>(x => x.QuestionId == 1)[0];
-            }
+            //    question = db.Where<Questions>(x => x.QuestionId == 1)[0];
+            //}
 
-            return View(question);
+            return View();
         }
     }
 }

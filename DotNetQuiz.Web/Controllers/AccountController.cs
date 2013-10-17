@@ -34,5 +34,11 @@ namespace DotNetQuiz.Web.Models
                 return View();
             }
         }
+
+        [Authorize]
+        public ActionResult Create()
+        {
+            return View();
+        }
     }
 }
