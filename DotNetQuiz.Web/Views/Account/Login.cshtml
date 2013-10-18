@@ -4,6 +4,7 @@
 {
     @Html.ValidationSummary(true)
     @Html.EditorForModel()
+    @Html.AntiForgeryToken()
     
     <input type="submit" value="Log in" />
 }

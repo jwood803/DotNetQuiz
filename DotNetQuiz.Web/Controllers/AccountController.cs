@@ -15,6 +15,7 @@ namespace DotNetQuiz.Web.Models
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Login(LoginViewModel model, string returnUrl)
         {
             if (ModelState.IsValid)
@@ -45,6 +46,13 @@ namespace DotNetQuiz.Web.Models
             }
 
             return Redirect(Url.Action("Index", "Home"));
+        }
+
+        [Authorize]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(Questions question)
+        {
+            return View();
         }
     }
 }

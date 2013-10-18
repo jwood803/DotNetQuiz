@@ -2,4 +2,11 @@
 
 <h2>Create View</h2>
 
-<p>Authenticated</p>
+@using(Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    
+    
+    <input type="submit" value="Add Question" />
+}

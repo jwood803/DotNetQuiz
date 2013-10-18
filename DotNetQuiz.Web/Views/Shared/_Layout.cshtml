@@ -19,8 +19,14 @@
                 @Html.ActionLink(".NET Quiz", "Index", "Home", null, new { @class = "brand" })
                 <div class="nav-collapse collapse">
                     <ul class="nav">
-                        <li>@Html.ActionLink("Login", "Login", "Account")</li>
-                        <li>@Html.ActionLink("Create", "Create", "Account")</li>
+                        @if(Request.IsAuthenticated)
+                        {
+                            <li>@Html.ActionLink("Add Question", "Create", "Account")</li>
+                        }
+                        else
+                        {
+                            <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                        }
                     </ul>
                 </div>
             </div>
