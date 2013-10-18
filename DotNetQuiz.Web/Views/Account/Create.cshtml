@@ -1,12 +1,15 @@
 ﻿@model DotNetQuiz.Web.Models.Questions
 
-<h2>Create View</h2>
+@{
+    ViewBag.Title = "Add New Question";
+}
 
 @using(Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-    
+    <fieldset>
+    </fieldset>
     
     <input type="submit" value="Add Question" />
 }

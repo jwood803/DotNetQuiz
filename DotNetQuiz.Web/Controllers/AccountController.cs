@@ -49,6 +49,7 @@ namespace DotNetQuiz.Web.Models
         }
 
         [Authorize]
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Questions question)
         {
