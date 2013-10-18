@@ -21,6 +21,7 @@ namespace DotNetQuiz.Web.Models
             {
                 if (FormsAuthentication.Authenticate(model.Username, model.Password))
                 {
+                    FormsAuthentication.SetAuthCookie(model.Username, true);
                     return Redirect(returnUrl ?? Url.Action("Index", "Home"));
                 }
                 else
@@ -38,7 +39,12 @@ namespace DotNetQuiz.Web.Models
         [Authorize]
         public ActionResult Create()
         {
-            return View();
+            if (User.Identity.IsAuthenticated)
+            {
+                return View();
+            }
+
+            return Redirect(Url.Action("Index", "Home"));
         }
     }
 }
