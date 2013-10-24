@@ -38,7 +38,15 @@ namespace DotNetQuiz.Web.Controllers
             //    question = db.Where<Questions>(x => x.QuestionId == 1)[0];
             //}
 
-            return View();
+            var sqlLiteFile = "~/App_Data/sqLiteDb".MapHostAbsolutePath();
+            var dbFactory = new OrmLiteConnectionFactory(sqlLiteFile, autoDisposeConnection: false, dialectProvider: SqliteDialect.Provider);
+
+            using (var db = dbFactory.Open())
+            {
+                var question = db.Select<Questions>();
+
+                return View(question);
+            }
         }
     }
 }
