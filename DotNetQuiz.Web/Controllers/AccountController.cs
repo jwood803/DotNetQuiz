@@ -27,7 +27,7 @@ namespace DotNetQuiz.Web.Models
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Username and password are incorrect");
+                    ModelState.AddModelError(string.Empty, "Username and password are incorrect");
                     return View();
                 }
             }
@@ -45,6 +45,8 @@ namespace DotNetQuiz.Web.Models
                 return View();
             }
 
+            ModelState.AddModelError(string.Empty, "You are not authorized to go to this page.");
+
             return Redirect(Url.Action("Index", "Home"));
         }
 
@@ -53,7 +55,15 @@ namespace DotNetQuiz.Web.Models
         [ValidateAntiForgeryToken]
         public ActionResult Create(Questions question)
         {
-            return View();
+            if (!ModelState.IsValid)
+            {
+                return View(question);
+            }
+
+            // TODO: Insert to database
+
+
+            return RedirectToAction("Index", "Home");
         }
     }
 }
