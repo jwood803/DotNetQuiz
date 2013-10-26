@@ -8,8 +8,11 @@
 {
     @Html.AntiForgeryToken()
 
-    <fieldset>
-    </fieldset>
+    @*<fieldset>
+        <legend>Create Question</legend>
+    </fieldset>*@
+
+    @Html.EditorForModel()
     
-    <input type="submit" value="Add Question" />
+    <input type="submit" value="Add Question"/>
 }
