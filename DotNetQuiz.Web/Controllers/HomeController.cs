@@ -2,23 +2,28 @@
 using System.Linq;
 using System.Web.Mvc;
 using System.Collections.Generic;
+using DotNetQuiz.Data;
 
 namespace DotNetQuiz.Web.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IDbContext db;
+
+        public HomeController() : this (new DbContext())
+        {
+        }
+
+        public HomeController(IDbContext db)
+        {
+            this.db = db;
+        }
+
         public ActionResult Index()
         {
-            // TODO: Move to a repository
-            //var sqlLiteFile = "~/App_Data/sqLiteDb".MapHostAbsolutePath();
-            //var dbFactory = new OrmLiteConnectionFactory(sqlLiteFile, autoDisposeConnection: false, dialectProvider: SqliteDialect.Provider);
+            var questions = db.SelectAll<Questions>();
 
-            //using (var db = dbFactory.Open())
-            //{
-            //    var question = db.Select<Questions>();
-
-            return View();
-            //}
+            return View(questions);
         }
     }
 }
