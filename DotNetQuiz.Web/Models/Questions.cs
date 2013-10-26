@@ -2,12 +2,13 @@
 {
     using ServiceStack.DataAnnotations;
     using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations;
+    using System.Web.Mvc;
 
     public class Questions
     {
         [AutoIncrement]
-        [ScaffoldColumn(false)]
+        [HiddenInput(DisplayValue=false)]
         public int QuestionId { get; set; }
         
         [Display(Name="Question")]
