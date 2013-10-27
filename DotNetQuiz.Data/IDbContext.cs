@@ -5,5 +5,6 @@
     public interface IDbContext
     {
         IEnumerable<T> SelectAll<T>();
+        void Insert<T>(T entity) where T : class, new();
     }
 }

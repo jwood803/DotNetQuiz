@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DotNetQuiz.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,6 +10,17 @@ namespace DotNetQuiz.Web.Models
 {
     public class AccountController : Controller
     {
+        private readonly IDbContext db;
+
+        public AccountController()
+        {
+        }
+
+        public AccountController(IDbContext db)
+        {
+            this.db = db;
+        }
+
         public ActionResult Login()
         {
             return View();
@@ -60,8 +72,7 @@ namespace DotNetQuiz.Web.Models
                 return View(question);
             }
 
-            // TODO: Insert to database
-
+            db.Insert<Questions>(question);
 
             return RedirectToAction("Index", "Home");
         }

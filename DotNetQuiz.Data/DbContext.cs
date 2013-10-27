@@ -2,8 +2,10 @@
 {
     using ServiceStack.Common.Utils;
     using ServiceStack.OrmLite;
+    using ServiceStack.OrmLite.Sqlite;
     using System.Collections.Generic;
     using System.Configuration;
+    using System.Data;
     using System.Linq;
 
     public class DbContext : IDbContext
@@ -25,6 +27,14 @@
             using (var db = connection.Open())
             {
                 return db.Select<T>();
+            }
+        }
+
+        public void Insert<T>(T entity) where T : class, new()
+        {
+            using (IDbConnection db = connection.OpenDbConnection())
+            {
+                db.Insert(entity);
             }
         }
     }

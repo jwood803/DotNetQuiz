@@ -16,7 +16,11 @@
 
         [References(typeof(Answers))]
         public virtual List<Answers> Answers { get; set; }
+
+        [Display(Name="Correct Answer ID")]
         public int CorrectAnswerId { get; set; }
+
+        [Display(Name="Correct Answer Description")]
         public string CorrectAnswerDesc { get; set; }
     }
 }
