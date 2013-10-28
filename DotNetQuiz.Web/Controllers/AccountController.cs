@@ -49,6 +49,11 @@ namespace DotNetQuiz.Web.Models
             }
         }
 
+        public ActionResult Register()
+        {
+
+        }
+
         [Authorize]
         public ActionResult Create()
         {
