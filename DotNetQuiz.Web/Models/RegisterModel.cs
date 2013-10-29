@@ -10,6 +10,7 @@
         public string Password { get; set; }
         
         [DataType(DataType.Password)]
+        [Display(Name="Confirm Password")]
         public string ConfirmPassword { get; set; }
 
         [DataType(DataType.EmailAddress)]
