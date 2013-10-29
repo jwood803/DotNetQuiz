@@ -51,7 +51,14 @@ namespace DotNetQuiz.Web.Models
 
         public ActionResult Register()
         {
+            return View();
+        }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Register(RegisterModel model)
+        {
+            return View();
         }
 
         [Authorize]

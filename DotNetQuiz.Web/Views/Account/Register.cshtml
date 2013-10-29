@@ -1,1 +1,8 @@
-﻿
+﻿@model DotNetQuiz.Web.Models.RegisterModel
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    @Html.EditorForModel()
+}
