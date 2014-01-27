@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.20623.1 VSUPREVIEW
+VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetQuiz.Web", "DotNetQuiz.Web\DotNetQuiz.Web.csproj", "{1CC06CEA-B829-4649-97B0-48F0B9415A06}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetQuiz.Tests", "DotNetQuiz.Tests\DotNetQuiz.Tests.csproj", "{414174EF-229A-469F-9BBF-A83F36511127}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetQuiz.Data", "DotNetQuiz.Data\DotNetQuiz.Data.csproj", "{C3C8BA96-453E-4FB0-A912-8B90ADE8536A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetQuiz.Service", "DotNetQuiz.Service\DotNetQuiz.Service.csproj", "{80785E37-A1DB-4BB8-9F8F-CE933135E5EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{C3C8BA96-453E-4FB0-A912-8B90ADE8536A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3C8BA96-453E-4FB0-A912-8B90ADE8536A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3C8BA96-453E-4FB0-A912-8B90ADE8536A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80785E37-A1DB-4BB8-9F8F-CE933135E5EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80785E37-A1DB-4BB8-9F8F-CE933135E5EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80785E37-A1DB-4BB8-9F8F-CE933135E5EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80785E37-A1DB-4BB8-9F8F-CE933135E5EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
